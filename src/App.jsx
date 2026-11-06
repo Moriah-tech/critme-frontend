@@ -3,6 +3,7 @@ import { useState } from "react";
 import Profile from "./pages/Profile";
 import Notification from "./pages/notification";
 import Inbox from "./pages/inbox";
+import Comments from "./pages/comments";
 
 function App() {
   const [currentPage, setCurrentPage] = useState("profile");
@@ -28,11 +29,16 @@ function App() {
         <button onClick={() => setCurrentPage("inbox")}>
           Inbox
         </button>
+
+        <button onClick={() => setCurrentPage("comments")}>
+          Comments
+        </button>
       </div>
 
       {currentPage === "profile" && <Profile />}
       {currentPage === "notification" && <Notification />}
       {currentPage === "inbox" && <Inbox />}
+      {currentPage === "comments" && <Comments />}
     </div>
   );
 }
