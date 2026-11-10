@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import Profile from "./pages/Profile";
+import Profile from "./pages/profile";
 import Notification from "./pages/notification";
 import Inbox from "./pages/inbox";
 import Comments from "./pages/comments";
@@ -35,10 +35,10 @@ function App() {
         </button>
       </div>
 
-      {currentPage === "profile" && <Profile />}
-      {currentPage === "notification" && <Notification />}
-      {currentPage === "inbox" && <Inbox />}
-      {currentPage === "comments" && <Comments />}
+      {currentPage === "profile" && <Profile onNavigate={setCurrentPage}/>}
+      {currentPage === "notification" && <Notification  onNavigate={setCurrentPage}/>}
+      {currentPage === "inbox" && <Inbox  onNavigate={setCurrentPage}/>}
+      {currentPage === "comments" && <Comments  onNavigate={setCurrentPage} />}
     </div>
   );
 }

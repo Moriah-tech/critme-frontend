@@ -3460,6 +3460,7 @@ div.search-btn.cm-search-icon-btn {
 .p43-settings svg {
   width: 22px;
   height: 22px;
+   cursor: pointer !important;
 }
 .p43-body {
   position: absolute;
@@ -3482,6 +3483,7 @@ div.search-btn.cm-search-icon-btn {
   justify-content: center;
   overflow: hidden;
 }
+
 .p43-avatar svg {
   width: 42px;
   height: 42px;

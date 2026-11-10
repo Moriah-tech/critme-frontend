@@ -2,7 +2,7 @@
 import React from 'react';
 import './Inbox.css';
 
-function Inbox() {
+function Inbox({ onNavigate }) {
   return (
     <div className="screen-block">
       <div className="screen-label">4.1 — Inbox (Chats)</div>
@@ -279,7 +279,12 @@ function Inbox() {
             <span>Chat</span>
           </div>
 
-          <div className="ni">
+          <div
+  className="ni"
+  onClick={() => onNavigate("profile")}
+  role="button"
+  tabIndex={0}
+>
             <svg viewBox="0 0 24 24">
               <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
               <circle cx="12" cy="7" r="4" />

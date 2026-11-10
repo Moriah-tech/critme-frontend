@@ -1,6 +1,8 @@
-﻿import "./Profile.css";
+﻿import { useState } from "react";
+import "./Profile.css";
 
-function Profile() {
+function Profile({onNavigate}) {
+  const [isEditing, setIsEditing] = useState(false);
   return (
     <>
 
@@ -27,11 +29,15 @@ function Profile() {
     </button>
 
     <div className="p43-body">
-      <div className="p43-avatar">
-        <svg viewBox="0 0 24 24" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-          <circle cx="12" cy="7" r="4"/>
-        </svg>
+      <div
+  className="p43-avatar"
+  onClick={() => alert("Avatar clicked")}
+>
+         <svg viewBox="0 0 24 24" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+      
       </div>
       <div className="p43-name">Marcus Bronley</div>
       <div className="p43-handle-row">
@@ -50,7 +56,12 @@ function Profile() {
       <div className="p43-bio">Builder· CritiqueMe · Ideas over noise</div>
       <div className="p43-actions">
         <button type="button" className="p43-btn">Share Profile</button>
-        <button type="button" className="p43-btn">Edit Profile</button>
+        <button
+  type="button"
+  className="p43-btn"
+  onClick={() => setIsEditing(true)}
+>
+  Edit Profile</button>
       </div>
     </div>
 
@@ -68,7 +79,12 @@ function Profile() {
           <svg viewBox="0 0 24 24"><line x1="12" x2="12" y1="5" y2="19"/><line x1="5" x2="19" y1="12" y2="12"/></svg>
         </div>
       </div>
-      <div className="ni">
+      <div
+  className="ni"
+  onClick={() => onNavigate("inbox")}
+  role="button"
+  tabIndex={0}
+>
         <svg fill="none" stroke="rgba(255,255,255,.75)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" viewBox="0 0 24 24">
           <path d="M17 8h1a3 3 0 0 1 3 3v4a3 3 0 0 1-3 3h-1v2.5l-2.5-2.5"/>
           <path d="M3 5a3 3 0 0 1 3-3h8a3 3 0 0 1 3 3v5a3 3 0 0 1-3 3H8l-3 3v-3H6a3 3 0 0 1-3-3z"/>
