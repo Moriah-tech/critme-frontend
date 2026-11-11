@@ -3,6 +3,8 @@ import "./Profile.css";
 
 function Profile({onNavigate}) {
   const [isEditing, setIsEditing] = useState(false);
+const [profileImage, setProfileImage] = useState(null);
+const fileInputRef = useRef(null);
   return (
     <>
 
