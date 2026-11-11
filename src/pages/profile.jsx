@@ -55,7 +55,26 @@ function Profile({onNavigate}) {
       </div>
       <div className="p43-bio">Builder· CritiqueMe · Ideas over noise</div>
       <div className="p43-actions">
-        <button type="button" className="p43-btn">Share Profile</button>
+        <button
+  type="button"
+  className="p43-btn"
+  onClick={async () => {
+    const profileUrl = window.location.href;
+
+    if (navigator.share) {
+      await navigator.share({
+        title: "My CRIT ME Profile",
+        text: "Check out my profile on CRIT ME!",
+        url: profileUrl,
+      });
+    } else {
+      await navigator.clipboard.writeText(profileUrl);
+      alert("Profile link copied!");
+    }
+  }}
+>
+  Share Profile
+</button>
         <button
   type="button"
   className="p43-btn"
