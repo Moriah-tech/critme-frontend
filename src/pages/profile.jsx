@@ -38,6 +38,13 @@ const handleImageChange = (event) => {
       </svg>
     </button>
 
+<input
+  type="file"
+  accept="image/*"
+  ref={fileInputRef}
+  onChange={handleImageChange}
+  style={{ display: "none" }}
+/>
     <div className="p43-body">
       <div
   className="p43-avatar"
