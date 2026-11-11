@@ -1,4 +1,4 @@
-﻿import { useStat useRef } from "react";
+﻿import { useState , useRef } from "react";
 import "./Profile.css";
 
 function Profile({onNavigate}) {
