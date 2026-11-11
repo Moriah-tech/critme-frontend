@@ -5,6 +5,14 @@ function Profile({onNavigate}) {
   const [isEditing, setIsEditing] = useState(false);
 const [profileImage, setProfileImage] = useState(null);
 const fileInputRef = useRef(null);
+
+const handleImageChange = (event) => {
+  const file = event.target.files[0];
+
+  if (file) {
+    setProfileImage(URL.createObjectURL(file));
+  }
+};
   return (
     <>
 
